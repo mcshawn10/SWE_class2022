@@ -22,7 +22,18 @@ class StringStat:
 
             print(i, "appears" , counter[i])
 
-    def replace_word(self):
-        pass
+    def replace_word(self, word, replacement):
+        with open(self.path, 'r') as file :
+            filedata = file.read()
 
+        # Replace the target string
+        filedata = filedata.replace(word, replacement)
+
+        # Write the file out again
+        with open('file.txt', 'w') as file:
+            file.write(filedata)
+
+
+test = StringStat('cat in the hat.txt')
+test.return_stats()
 
