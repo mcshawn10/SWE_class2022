@@ -1,6 +1,7 @@
 
 from collections import Counter
 import unittest
+from Test import TestStringStat
 
 
 
@@ -11,6 +12,10 @@ class StringStat:
 
     def return_stats(self):
         txt_file = open(self.path, 'r')
+
+        TestStringStat().test_return_stats(self.path) # unit test
+
+
         txt = txt_file.read()
         txt = txt.lower()
         all_words = txt.split()
@@ -24,6 +29,10 @@ class StringStat:
             print(i, "appears" , counter[i])
 
     def replace_word(self, word, replacement):
+
+
+        TestStringStat().test_replace_word(word, self.path) # unit test
+
         with open(self.path, 'r') as file :
             new_txt = file.read()
 
@@ -35,6 +44,9 @@ class StringStat:
             file.write(new_txt)
 
     def grepline(self, word):
+
+        TestStringStat().test_replace_word(word, self.path) # unit test
+
         input_file = open(self.path, 'r')
         index = 0
         i = 1
@@ -58,10 +70,10 @@ class StringStat:
 if __name__ == '__main__':
     test = StringStat('cat in the hat.txt')
 
-    test.return_stats() # requirement 1
+    #test.return_stats() # requirement 1
 
 
-    test.replace_word("cat", "dog") #requirement 2
+    #test.replace_word("cat", "dog") #requirement 2
 
 
     test.grepline("dog") #requirement 3

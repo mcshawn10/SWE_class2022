@@ -2,7 +2,7 @@
 
 import unittest
 import pathlib as pl
-from proj import StringStat
+#from proj import StringStat
 
 class TestStringStat(unittest.TestCase):
     '''This test case raises an error if the file does not exist in the current work folder'''
@@ -31,6 +31,3 @@ class TestStringStat(unittest.TestCase):
 
         self.assertTrue(i)
 
-uTest = TestStringStat()
-
-uTest.test_replace_word("dog",'cat in the hat.txt')
